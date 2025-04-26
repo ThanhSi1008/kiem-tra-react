@@ -58,7 +58,7 @@ const Header = () => {
               <div className="university-name">
                 <div className="ministry">BỘ CÔNG THƯƠNG</div>
                 <div className="school-name">TRƯỜNG ĐẠI HỌC CÔNG NGHIỆP THÀNH PHỐ HỒ CHÍ MINH</div>
-                <div className="slogan">INDUSTRIAL UNIVERSITY OF HO CHI MINH CITY</div>
+                <div className="slogan">Đổi mới tư duy, làm giàu thêm tri thức - đời sống</div>
               </div>
             </div>
           </div>

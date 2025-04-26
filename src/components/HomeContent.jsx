@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaArrowRight, FaCalendarAlt, FaRegNewspaper, FaGraduationCap, FaUniversity, FaGlobe, FaUsers } from 'react-icons/fa';
+import { FaArrowRight, FaCalendarAlt, FaRegNewspaper, FaGraduationCap, FaUniversity, FaGlobe, FaUsers, FaBook, FaUserGraduate, FaBuilding, FaChalkboardTeacher, FaFileAlt, FaSearch, FaExternalLinkAlt, FaChevronRight } from 'react-icons/fa';
 import '../assets/css/HomeContent.css';
 
 const HomeContent = () => {
@@ -8,21 +8,21 @@ const HomeContent = () => {
   const newsItems = [
     {
       id: 1,
-      title: 'Thông báo tuyển sinh năm học 2023-2024',
+      title: 'Thông báo tuyển sinh đại học chính quy năm 2023',
       date: '15/06/2023',
       image: '/images/news/news1.jpg',
       excerpt: 'Trường Đại học Công nghiệp TP.HCM thông báo tuyển sinh đại học chính quy năm học 2023-2024...'
     },
     {
       id: 2,
-      title: 'Hội nghị khoa học công nghệ lần thứ 5',
+      title: 'Hội nghị khoa học công nghệ lần thứ 5 năm 2023',
       date: '10/06/2023',
       image: '/images/news/news2.jpg',
       excerpt: 'Hội nghị khoa học công nghệ lần thứ 5 được tổ chức tại Trường Đại học Công nghiệp TP.HCM...'
     },
     {
       id: 3,
-      title: 'Lễ ký kết hợp tác với doanh nghiệp',
+      title: 'Lễ ký kết hợp tác với doanh nghiệp trong lĩnh vực công nghệ',
       date: '05/06/2023',
       image: '/images/news/news3.jpg',
       excerpt: 'Trường Đại học Công nghiệp TP.HCM đã ký kết hợp tác với các doanh nghiệp lớn trong lĩnh vực công nghệ...'
@@ -54,9 +54,21 @@ const HomeContent = () => {
   // Quick links data
   const quickLinks = [
     { id: 1, title: 'TUYỂN SINH', icon: <FaGraduationCap />, url: '/tuyen-sinh', color: '#0066b3' },
-    { id: 2, title: 'ĐÀO TẠO', icon: <FaUniversity />, url: '/dao-tao', color: '#00a651' },
-    { id: 3, title: 'HỢP TÁC QUỐC TẾ', icon: <FaGlobe />, url: '/hop-tac', color: '#f7941d' },
-    { id: 4, title: 'SINH VIÊN', icon: <FaUsers />, url: '/sinh-vien', color: '#ed1c24' }
+    { id: 2, title: 'ĐÀO TẠO', icon: <FaBook />, url: '/dao-tao', color: '#00a651' },
+    { id: 3, title: 'NGHIÊN CỨU', icon: <FaSearch />, url: '/nghien-cuu', color: '#f7941d' },
+    { id: 4, title: 'HỢP TÁC', icon: <FaGlobe />, url: '/hop-tac', color: '#ed1c24' },
+    { id: 5, title: 'SINH VIÊN', icon: <FaUsers />, url: '/sinh-vien', color: '#662d91' },
+    { id: 6, title: 'GIẢNG VIÊN', icon: <FaChalkboardTeacher />, url: '/giang-vien', color: '#2e3192' }
+  ];
+
+  // Featured links data
+  const featuredLinks = [
+    { id: 1, title: 'Thông tin tuyển sinh', url: '/tuyen-sinh', icon: <FaGraduationCap /> },
+    { id: 2, title: 'Đào tạo đại học', url: '/dao-tao/dai-hoc', icon: <FaUniversity /> },
+    { id: 3, title: 'Đào tạo sau đại học', url: '/dao-tao/sau-dai-hoc', icon: <FaUserGraduate /> },
+    { id: 4, title: 'Đào tạo quốc tế', url: '/dao-tao/quoc-te', icon: <FaGlobe /> },
+    { id: 5, title: 'Các đơn vị trực thuộc', url: '/don-vi', icon: <FaBuilding /> },
+    { id: 6, title: 'Văn bản - Biểu mẫu', url: '/van-ban', icon: <FaFileAlt /> }
   ];
 
   return (
@@ -96,7 +108,7 @@ const HomeContent = () => {
         <div className="container">
           <div className="row">
             {quickLinks.map(link => (
-              <div className="col-md-3 col-sm-6" key={link.id}>
+              <div className="col-md-2 col-sm-4 col-6" key={link.id}>
                 <Link to={link.url} className="quick-link-item" style={{ backgroundColor: link.color }}>
                   <div className="quick-link-icon">
                     {link.icon}
@@ -115,8 +127,65 @@ const HomeContent = () => {
       <section className="main-content-section">
         <div className="container">
           <div className="row">
+            {/* Left Sidebar */}
+            <div className="col-lg-3">
+              <div className="content-box featured-links-box">
+                <div className="content-header">
+                  <h2>LIÊN KẾT NỔI BẬT</h2>
+                </div>
+                <div className="content-body">
+                  <ul className="featured-links-list">
+                    {featuredLinks.map(link => (
+                      <li key={link.id}>
+                        <Link to={link.url}>
+                          <span className="link-icon">{link.icon}</span>
+                          <span className="link-text">{link.title}</span>
+                          <FaChevronRight className="arrow-icon" />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* E-Services Box */}
+              <div className="content-box e-services-box">
+                <div className="content-header">
+                  <h2>DỊCH VỤ TRỰC TUYẾN</h2>
+                </div>
+                <div className="content-body">
+                  <ul className="e-services-list">
+                    <li>
+                      <a href="https://sinhvien.iuh.edu.vn" target="_blank" rel="noopener noreferrer">
+                        <span className="service-text">Cổng thông tin sinh viên</span>
+                        <FaExternalLinkAlt className="external-icon" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://email.iuh.edu.vn" target="_blank" rel="noopener noreferrer">
+                        <span className="service-text">Email IUH</span>
+                        <FaExternalLinkAlt className="external-icon" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://lms.iuh.edu.vn" target="_blank" rel="noopener noreferrer">
+                        <span className="service-text">Hệ thống học tập trực tuyến</span>
+                        <FaExternalLinkAlt className="external-icon" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://lib.iuh.edu.vn" target="_blank" rel="noopener noreferrer">
+                        <span className="service-text">Thư viện số</span>
+                        <FaExternalLinkAlt className="external-icon" />
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
             {/* News Section */}
-            <div className="col-lg-8">
+            <div className="col-lg-6">
               <div className="content-box news-box">
                 <div className="content-header">
                   <h2><FaRegNewspaper /> TIN TỨC - SỰ KIỆN</h2>
@@ -142,10 +211,46 @@ const HomeContent = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Announcements Section */}
+              <div className="content-box announcements-box">
+                <div className="content-header">
+                  <h2>THÔNG BÁO</h2>
+                  <Link to="/thong-bao" className="view-all">Xem tất cả <FaArrowRight /></Link>
+                </div>
+                <div className="content-body">
+                  <ul className="announcements-list">
+                    <li>
+                      <Link to="/thong-bao/1">
+                        <span className="announcement-date">15/06/2023</span>
+                        <span className="announcement-title">Thông báo về việc đăng ký học phần học kỳ 1 năm học 2023-2024</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/thong-bao/2">
+                        <span className="announcement-date">10/06/2023</span>
+                        <span className="announcement-title">Thông báo lịch thi học kỳ 2 năm học 2022-2023</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/thong-bao/3">
+                        <span className="announcement-date">05/06/2023</span>
+                        <span className="announcement-title">Thông báo về việc nộp học phí học kỳ hè năm học 2022-2023</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/thong-bao/4">
+                        <span className="announcement-date">01/06/2023</span>
+                        <span className="announcement-title">Thông báo về việc xét tốt nghiệp đợt tháng 6 năm 2023</span>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
 
-            {/* Sidebar */}
-            <div className="col-lg-4">
+            {/* Right Sidebar */}
+            <div className="col-lg-3">
               {/* Events Calendar */}
               <div className="content-box events-box">
                 <div className="content-header">
@@ -178,16 +283,66 @@ const HomeContent = () => {
                 </div>
                 <div className="content-body">
                   <div className="video-container">
-                    <iframe 
-                      width="100%" 
-                      height="215" 
-                      src="https://www.youtube.com/embed/videoseries?list=PLx5xS4zUMUy5pEoI0KmfJgRLzOJXlNmXz" 
-                      title="IUH Videos" 
-                      frameBorder="0" 
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    <iframe
+                      width="100%"
+                      height="215"
+                      src="https://www.youtube.com/embed/videoseries?list=PLx5xS4zUMUy5pEoI0KmfJgRLzOJXlNmXz"
+                      title="IUH Videos"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen>
                     </iframe>
                   </div>
+                </div>
+              </div>
+
+              {/* Social Media Links */}
+              <div className="social-media-links">
+                <a href="https://www.facebook.com/iuh.edu.vn" target="_blank" rel="noopener noreferrer" className="facebook-link">
+                  Kết nối với chúng tôi qua Facebook
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Partners Section */}
+      <section className="partners-section">
+        <div className="container">
+          <div className="section-title">
+            <h2>ĐỐI TÁC</h2>
+          </div>
+          <div className="partners-slider">
+            <div className="row">
+              <div className="col-md-2 col-4">
+                <div className="partner-item">
+                  <img src="https://via.placeholder.com/150x80?text=Partner+1" alt="Partner 1" />
+                </div>
+              </div>
+              <div className="col-md-2 col-4">
+                <div className="partner-item">
+                  <img src="https://via.placeholder.com/150x80?text=Partner+2" alt="Partner 2" />
+                </div>
+              </div>
+              <div className="col-md-2 col-4">
+                <div className="partner-item">
+                  <img src="https://via.placeholder.com/150x80?text=Partner+3" alt="Partner 3" />
+                </div>
+              </div>
+              <div className="col-md-2 col-4">
+                <div className="partner-item">
+                  <img src="https://via.placeholder.com/150x80?text=Partner+4" alt="Partner 4" />
+                </div>
+              </div>
+              <div className="col-md-2 col-4">
+                <div className="partner-item">
+                  <img src="https://via.placeholder.com/150x80?text=Partner+5" alt="Partner 5" />
+                </div>
+              </div>
+              <div className="col-md-2 col-4">
+                <div className="partner-item">
+                  <img src="https://via.placeholder.com/150x80?text=Partner+6" alt="Partner 6" />
                 </div>
               </div>
             </div>
