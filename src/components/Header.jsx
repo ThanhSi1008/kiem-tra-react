@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaSearch, FaGlobe } from 'react-icons/fa';
 import '../assets/css/Header.css';
-import iuhLogo from '../assets/images/iuh-logo.png';
 
 const Header = () => {
   return (
@@ -28,18 +27,32 @@ const Header = () => {
           </div>
         </div>
       </div>
-      
-      <div className="main-header">
+
+      <div className="logo-section">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-md-3">
+            <div className="col-md-2">
               <div className="logo">
                 <Link to="/">
-                  <img src={iuhLogo} alt="IUH Logo" />
+                  <img src="/images/iuh-logo.png" alt="IUH Logo" />
                 </Link>
               </div>
             </div>
-            <div className="col-md-9">
+            <div className="col-md-10">
+              <div className="university-name">
+                <div className="ministry">BỘ CÔNG THƯƠNG</div>
+                <div className="school-name">ĐẠI HỌC CÔNG NGHIỆP TP. HỒ CHÍ MINH</div>
+                <div className="slogan">Đổi mới tư duy, làm giàu thêm tri thức - đời sống</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="main-header">
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
               <nav className="main-nav">
                 <ul>
                   <li><Link to="/">TRANG CHỦ</Link></li>
@@ -50,6 +63,17 @@ const Header = () => {
                   <li><Link to="/tuyen-sinh">TUYỂN SINH</Link></li>
                   <li><Link to="/sinh-vien">SINH VIÊN</Link></li>
                   <li><Link to="/tin-tuc">TIN TỨC</Link></li>
+                  <li className="dropdown">
+                    <Link to="/co-cau-to-chuc">CƠ CẤU TỔ CHỨC</Link>
+                    <div className="dropdown-content">
+                      <Link to="/co-cau-to-chuc/ban-giam-hieu">Ban Giám Hiệu</Link>
+                      <Link to="/co-cau-to-chuc/hoi-dong-truong">Hội Đồng Trường</Link>
+                      <Link to="/co-cau-to-chuc/phong-ban">Phòng Ban</Link>
+                      <Link to="/co-cau-to-chuc/khoa">Khoa</Link>
+                      <Link to="/co-cau-to-chuc/trung-tam">Trung Tâm</Link>
+                      <Link to="/co-cau-to-chuc/vien">Viện</Link>
+                    </div>
+                  </li>
                 </ul>
               </nav>
             </div>
