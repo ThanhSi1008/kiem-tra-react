@@ -5,10 +5,9 @@ import './App.css'
 
 // Components
 import Header from './components/Header'
-import Banner from './components/Banner'
-import News from './components/News'
-import QuickLinks from './components/QuickLinks'
+import HomeContent from './components/HomeContent'
 import Footer from './components/Footer'
+import NotificationPopup from './components/NotificationPopup'
 
 function App() {
   return (
@@ -16,11 +15,10 @@ function App() {
       <div className="app">
         <Header />
         <main>
-          <Banner />
-          <QuickLinks />
-          <News />
+          <HomeContent />
         </main>
         <Footer />
+        <NotificationPopup />
       </div>
     </Router>
   )

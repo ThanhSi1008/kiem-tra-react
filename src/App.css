@@ -2,6 +2,7 @@ body {
   font-family: 'Roboto', sans-serif;
   color: #333;
   line-height: 1.6;
+  background-color: #fff;
 }
 
 .app {
@@ -28,7 +29,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: #0066b3;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.3s, background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 a:hover {
@@ -43,4 +44,22 @@ a:hover {
 .btn-primary:hover {
   background-color: #004d8c;
   border-color: #004d8c;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0066b3;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #004d8c;
 }
