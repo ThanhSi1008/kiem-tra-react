@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaSearch, FaGlobe } from 'react-icons/fa';
+import { FaSearch, FaGlobe, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import '../assets/css/Header.css';
 
 const Header = () => {
@@ -9,19 +9,35 @@ const Header = () => {
       <div className="top-header">
         <div className="container">
           <div className="row">
-            <div className="col-md-6">
-              <div className="language-selector">
-                <FaGlobe className="globe-icon" />
-                <select>
-                  <option value="vi">Tiếng Việt</option>
-                  <option value="en">English</option>
-                </select>
+            <div className="col-md-8">
+              <div className="contact-info">
+                <div className="contact-item">
+                  <FaPhone className="contact-icon" />
+                  <span>(028) 38940390</span>
+                </div>
+                <div className="contact-item">
+                  <FaEnvelope className="contact-icon" />
+                  <span>dhcn@iuh.edu.vn</span>
+                </div>
+                <div className="contact-item">
+                  <FaMapMarkerAlt className="contact-icon" />
+                  <span>Số 12 Nguyễn Văn Bảo, P.4, Q.Gò Vấp, TP.HCM</span>
+                </div>
               </div>
             </div>
-            <div className="col-md-6">
-              <div className="search-box">
-                <input type="text" placeholder="Tìm kiếm..." />
-                <button><FaSearch /></button>
+            <div className="col-md-4">
+              <div className="top-right">
+                <div className="language-selector">
+                  <FaGlobe className="globe-icon" />
+                  <select>
+                    <option value="vi">Tiếng Việt</option>
+                    <option value="en">English</option>
+                  </select>
+                </div>
+                <div className="search-box">
+                  <input type="text" placeholder="Tìm kiếm..." />
+                  <button><FaSearch /></button>
+                </div>
               </div>
             </div>
           </div>
@@ -41,8 +57,8 @@ const Header = () => {
             <div className="col-md-10">
               <div className="university-name">
                 <div className="ministry">BỘ CÔNG THƯƠNG</div>
-                <div className="school-name">ĐẠI HỌC CÔNG NGHIỆP TP. HỒ CHÍ MINH</div>
-                <div className="slogan">Đổi mới tư duy, làm giàu thêm tri thức - đời sống</div>
+                <div className="school-name">TRƯỜNG ĐẠI HỌC CÔNG NGHIỆP THÀNH PHỐ HỒ CHÍ MINH</div>
+                <div className="slogan">INDUSTRIAL UNIVERSITY OF HO CHI MINH CITY</div>
               </div>
             </div>
           </div>
