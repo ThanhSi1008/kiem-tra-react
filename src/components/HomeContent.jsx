@@ -56,9 +56,9 @@ const HomeContent = () => {
     { id: 1, title: 'TUYỂN SINH', icon: <FaGraduationCap />, url: '/tuyen-sinh', color: '#0066b3' },
     { id: 2, title: 'ĐÀO TẠO', icon: <FaBook />, url: '/dao-tao', color: '#00a651' },
     { id: 3, title: 'NGHIÊN CỨU', icon: <FaSearch />, url: '/nghien-cuu', color: '#f7941d' },
-    { id: 4, title: 'HỢP TÁC', icon: <FaGlobe />, url: '/hop-tac', color: '#ed1c24' },
-    { id: 5, title: 'SINH VIÊN', icon: <FaUsers />, url: '/sinh-vien', color: '#662d91' },
-    { id: 6, title: 'GIẢNG VIÊN', icon: <FaChalkboardTeacher />, url: '/giang-vien', color: '#2e3192' }
+    { id: 4, title: 'HỢP TÁC', icon: <FaGlobe />, url: '/hop-tac', color: '#e74c3c' },
+    { id: 5, title: 'SINH VIÊN', icon: <FaUsers />, url: '/sinh-vien', color: '#9b59b6' },
+    { id: 6, title: 'GIẢNG VIÊN', icon: <FaChalkboardTeacher />, url: '/giang-vien', color: '#3498db' }
   ];
 
   // Featured links data
